@@ -27,7 +27,7 @@ class Translation < ActiveRecord::Base
   
   
   #is the following code unnecessary of using radio button?
-  TRANS_TYPES = %w{term segment}
+  TRANSLATION_TYPES = %w{term segment}
   
   validates_inclusion_of 	:doc_type,  :in => TRANSLATION_TYPES, 
   							:message => "must be one of: #{TRANS_TYPES.join(', ')}" 
