@@ -30,7 +30,7 @@ class Translation < ActiveRecord::Base
   TRANSLATION_TYPES = %w{term segment}
   
   validates_inclusion_of 	:doc_type,  :in => TRANSLATION_TYPES, 
-  							:message => "must be one of: #{TRANS_TYPES.join(', ')}" 
+  							:message => "must be one of: #{TRANSLATION_TYPES.join(', ')}" 
   
   
   
