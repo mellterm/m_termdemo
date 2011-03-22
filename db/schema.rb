@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110322031717) do
+ActiveRecord::Schema.define(:version => 20110322035923) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -58,12 +58,13 @@ ActiveRecord::Schema.define(:version => 20110322031717) do
 
   create_table "sources", :force => true do |t|
     t.integer  "translation_id"
-    t.integer  "source_language_id"
-    t.integer  "target_language_id"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "language_id"
   end
+
+  add_index "sources", ["content"], :name => "index_sources_on_content"
 
   create_table "tags", :force => true do |t|
     t.string   "name"
