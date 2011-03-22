@@ -1,0 +1,2 @@
+class SourceDocsController < ApplicationController
+end

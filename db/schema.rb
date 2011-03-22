@@ -10,7 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110321094818) do
+ActiveRecord::Schema.define(:version => 20110322031717) do
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.string   "company_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "name"
+    t.string   "doc_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents_tags", :id => false, :force => true do |t|
+    t.integer "document_id"
+    t.integer "tag_id"
+  end
 
   create_table "domains", :force => true do |t|
     t.text     "content"
@@ -23,11 +43,30 @@ ActiveRecord::Schema.define(:version => 20110321094818) do
     t.integer "translation_id"
   end
 
+  create_table "languages", :force => true do |t|
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "source_docs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sources", :force => true do |t|
     t.integer  "translation_id"
     t.integer  "source_language_id"
     t.integer  "target_language_id"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,9 +81,9 @@ ActiveRecord::Schema.define(:version => 20110321094818) do
   create_table "translations", :force => true do |t|
     t.integer "source_id"
     t.integer "target_id"
-    t.integer "domain_id"
-    t.boolean "is_public", :default => false
+    t.boolean "is_public",  :default => false
     t.integer "user_id"
+    t.string  "trans_type"
   end
 
   add_index "translations", ["user_id"], :name => "index_translations_on_user_id"

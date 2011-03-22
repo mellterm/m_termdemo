@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20110322031717
+#
+# Table name: sources
+#
+#  id                 :integer         not null, primary key
+#  translation_id     :integer
+#  source_language_id :integer
+#  target_language_id :integer
+#  content            :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:

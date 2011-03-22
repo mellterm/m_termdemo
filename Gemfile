@@ -9,3 +9,4 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'haml-rails' 
 gem "simple_form"
 gem 'dynamic_form'
+gem "annotate-models", '1.0.4'

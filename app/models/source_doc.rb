@@ -1,18 +1,14 @@
 # == Schema Information
 # Schema version: 20110322031717
 #
-# Table name: domains
+# Table name: source_docs
 #
 #  id         :integer         not null, primary key
-#  content    :text
+#  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  content: MyText
-
-two:
-  content: MyText
+class SourceDoc < ActiveRecord::Base
+	has_many :translations
+end

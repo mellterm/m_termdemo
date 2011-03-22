@@ -1,18 +1,15 @@
 # == Schema Information
 # Schema version: 20110322031717
 #
-# Table name: domains
+# Table name: tags
 #
 #  id         :integer         not null, primary key
-#  content    :text
+#  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  content: MyText
-
-two:
-  content: MyText
+class Tag < ActiveRecord::Base
+	
+	belongs_to :document
+end

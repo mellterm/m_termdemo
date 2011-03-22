@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20110322031717
+#
+# Table name: companies
+#
+#  id           :integer         not null, primary key
+#  name         :string(255)
+#  company_type :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  company_type: MyString
+
+two:
+  name: MyString
+  company_type: MyString

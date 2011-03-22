@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20110322031717
+#
+# Table name: languages
+#
+#  id          :integer         not null, primary key
+#  code        :string(255)
+#  description :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: MyString
+  description: MyString
+
+two:
+  code: MyString
+  description: MyString

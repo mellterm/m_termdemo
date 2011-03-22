@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
+    annotate-models (1.0.4)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -84,6 +85,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate-models (= 1.0.4)
   bcrypt-ruby
   dynamic_form
   haml-rails
