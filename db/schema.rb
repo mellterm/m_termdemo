@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110322035923) do
+ActiveRecord::Schema.define(:version => 20110329045905) do
+
+  create_table "associations", :force => true do |t|
+    t.text    "description"
+    t.integer "associable_id"
+    t.string  "associable_type"
+  end
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -21,26 +27,26 @@ ActiveRecord::Schema.define(:version => 20110322035923) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
-    t.string   "doc_type"
+    t.string   "document_type"
     t.integer  "user_id"
+    t.integer  "provider_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "documents_tags", :id => false, :force => true do |t|
-    t.integer "document_id"
-    t.integer "tag_id"
+  add_index "documents", ["provider_id"], :name => "index_documents_on_provider_id"
+
+  create_table "domain_spaces", :force => true do |t|
+    t.integer  "translation_id"
+    t.integer  "domain_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "domains", :force => true do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "domains_translations", :id => false, :force => true do |t|
-    t.integer "domain_id"
-    t.integer "translation_id"
   end
 
   create_table "languages", :force => true do |t|
@@ -50,6 +56,28 @@ ActiveRecord::Schema.define(:version => 20110322035923) do
     t.datetime "updated_at"
   end
 
+  create_table "providers", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "default_domain_id"
+    t.integer  "default_source_doc_id"
+    t.integer  "default_source_language_id"
+    t.integer  "default_target_language_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "segments", :force => true do |t|
+    t.string   "content"
+    t.integer  "language_id"
+    t.string   "definition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "segments", ["content"], :name => "index_segments_on_content"
+
   create_table "source_docs", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -58,16 +86,9 @@ ActiveRecord::Schema.define(:version => 20110322035923) do
 
   create_table "sources", :force => true do |t|
     t.integer  "translation_id"
+    t.integer  "source_language_id"
+    t.integer  "target_language_id"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "language_id"
-  end
-
-  add_index "sources", ["content"], :name => "index_sources_on_content"
-
-  create_table "tags", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,15 +100,21 @@ ActiveRecord::Schema.define(:version => 20110322035923) do
     t.datetime "updated_at"
   end
 
+  create_table "terms", :force => true do |t|
+    t.string   "content"
+    t.integer  "language_id"
+    t.string   "definition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "terms", ["content"], :name => "index_terms_on_content"
+
   create_table "translations", :force => true do |t|
     t.integer "source_id"
     t.integer "target_id"
-    t.boolean "is_public",  :default => false
-    t.integer "user_id"
-    t.string  "trans_type"
+    t.boolean "is_public", :default => false
   end
-
-  add_index "translations", ["user_id"], :name => "index_translations_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :null => false

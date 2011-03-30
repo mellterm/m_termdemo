@@ -1,0 +1,36 @@
+<% title "Provider" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @provider.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @provider.description %>
+</p>
+<p>
+  <strong>Default Domain:</strong>
+  <%= @provider.default_domain_id %>
+</p>
+<p>
+  <strong>Default Source Doc:</strong>
+  <%= @provider.default_source_doc_id %>
+</p>
+<p>
+  <strong>Default Source Language:</strong>
+  <%= @provider.default_source_language_id %>
+</p>
+<p>
+  <strong>Default Target Language:</strong>
+  <%= @provider.default_target_language_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @provider.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_provider_path(@provider) %> |
+  <%= link_to "Destroy", @provider, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", providers_path %>
+</p>

@@ -10,6 +10,10 @@
 #
 
 class Domain < ActiveRecord::Base
-  belongs_to :translation
-  validates_presence_of :content
+  
+	has_many :domain_spaces
+	has_many :translations, :through => :domain_spaces	
+	
+	
+  	validates_presence_of :content
 end

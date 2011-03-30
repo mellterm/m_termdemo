@@ -1,14 +1,12 @@
 # == Schema Information
-# Schema version: 20110322031717
+# Schema version: 20110329045905
 #
 # Table name: translations
 #
-#  id         :integer         not null, primary key
-#  source_id  :integer
-#  target_id  :integer
-#  is_public  :boolean
-#  user_id    :integer
-#  trans_type :string(255)
+#  id        :integer         not null, primary key
+#  source_id :integer
+#  target_id :integer
+#  is_public :boolean
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

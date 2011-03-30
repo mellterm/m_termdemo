@@ -1,14 +1,15 @@
 # == Schema Information
-# Schema version: 20110322031717
+# Schema version: 20110329045905
 #
 # Table name: documents
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  doc_type   :string(255)
-#  user_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  document_type :string(255)
+#  user_id       :integer
+#  provider_id   :integer
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

@@ -52,6 +52,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.12)
+    nifty-generators (0.4.5)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -91,6 +93,8 @@ DEPENDENCIES
   haml-rails
   has_scope
   inherited_resources (~> 1.2.1)
+  mocha
+  nifty-generators (>= 0.4.0)
   rails (= 3.0.4)
   responders
   simple_form

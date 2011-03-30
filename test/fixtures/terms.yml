@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20110329045905
+#
+# Table name: terms
+#
+#  id          :integer         not null, primary key
+#  content     :string(255)
+#  language_id :integer
+#  definition  :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  content: MyString
+  language_id: 1
+  definition: MyString
+
+two:
+  content: MyString
+  language_id: 1
+  definition: MyString

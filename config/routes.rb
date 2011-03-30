@@ -1,4 +1,6 @@
 Translationdemo::Application.routes.draw do
+  resources :providers
+
   resource :user_session do 
     get 'logout'
   end

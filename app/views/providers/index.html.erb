@@ -1,0 +1,29 @@
+<% title "Providers" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Default Domain</th>
+    <th>Default Source Doc</th>
+    <th>Default Source Language</th>
+    <th>Default Target Language</th>
+    <th>User</th>
+  </tr>
+  <% for provider in @providers %>
+    <tr>
+      <td><%= provider.name %></td>
+      <td><%= provider.description %></td>
+      <td><%= provider.default_domain_id %></td>
+      <td><%= provider.default_source_doc_id %></td>
+      <td><%= provider.default_source_language_id %></td>
+      <td><%= provider.default_target_language_id %></td>
+      <td><%= provider.user_id %></td>
+      <td><%= link_to "Show", provider %></td>
+      <td><%= link_to "Edit", edit_provider_path(provider) %></td>
+      <td><%= link_to "Destroy", provider, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Provider", new_provider_path %></p>

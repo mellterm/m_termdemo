@@ -12,7 +12,8 @@
 
 class Language < ActiveRecord::Base
 	
-	has_many :sources
-	has_many :targets
+	has_many :terms
+	has_many :segments
+	
 	
 end

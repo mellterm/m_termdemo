@@ -13,4 +13,7 @@
 class Company < ActiveRecord::Base
 	
 	has_many :translations	
+	
+	has_many :associations, :as => :associable
+	
 end

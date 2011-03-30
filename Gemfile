@@ -10,3 +10,5 @@ gem 'haml-rails'
 gem "simple_form"
 gem 'dynamic_form'
 gem "annotate-models", '1.0.4'
+gem 'nifty-generators', '>= 0.4.0'
+gem "mocha", :group => :test

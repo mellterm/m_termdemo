@@ -1,0 +1,22 @@
+# == Schema Information
+# Schema version: 20110329045905
+#
+# Table name: associations
+#
+#  id              :integer         not null, primary key
+#  description     :text
+#  associable_id   :integer
+#  associable_type :string(255)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  associator_id: 1
+  associated_id: 1
+  assoc_type: MyString
+
+two:
+  associator_id: 1
+  associated_id: 1
+  assoc_type: MyString

@@ -1,20 +1,21 @@
 # == Schema Information
-# Schema version: 20110322035923
+# Schema version: 20110329045905
 #
-# Table name: sources
+# Table name: domain_spaces
 #
 #  id             :integer         not null, primary key
 #  translation_id :integer
-#  content        :text
+#  domain_id      :integer
 #  created_at     :datetime
 #  updated_at     :datetime
-#  language_id    :integer
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  content: MyText
+  translation_id: 1
+  domain_id: 1
 
 two:
-  content: MyText
+  translation_id: 1
+  domain_id: 1

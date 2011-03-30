@@ -40,8 +40,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :if => :require_password?
   validates_presence_of :password_confirmation, :if => :require_password?
   
-  has_many :translations, :dependent => :destroy
-  has_many :documents
+  
+  has_many :providers
   
   scope :admins, where(:admin => true)
   scope :forward,  order('created_at ASC')
